@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/Login.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="right">
+        <form method="post">
+          <h1>Log In</h1>
+          {% csrf_token %}
+          <label>username</label>
+          <div class="text_field">
+            <input type="text" required name="username" />
+          </div>
+          <label>password</label>
+          <div class="text_field">
+            <input type="password" required name="password" />
+          </div>
+
+          <div>
+            <div class="child">
+              <input
+                type="checkbox"
+                id="remmber "
+                name="vehicle1"
+                value="Bike"
+              />
+              <label for="vehicle1"> Remember me </label>
+            </div>
+
+            <div class="child">
+              <a href="{% url 'reset' %}">Forget your password?</a>
+            </div>
+          </div>
+
+          <div class="pass">
+            <input type="submit" value="Log In" />
+          </div>
+
+          <div class="signup_Link">
+            Don't have an account?
+            <a href="{% url 'join' %}">SignUp</a>
+          </div>
+        </form>
+      </div>
+
+      <div class="left">
+        <h1>Welcome Back!</h1>
+        <img
+          src="{% static 'imgs/Visual data-cuate 1.png' %}"
+          alt="a photo for a login"
+        />
+      </div>
+    </div>
+  </body>
+</html>

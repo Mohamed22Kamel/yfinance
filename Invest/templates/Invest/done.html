@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Done</title>
+    <link rel="stylesheet" href="{% static 'css/Login.css' %}" />
+  </head>
+  <body>
+    <div class="done-container">
+      <img
+        src="{% static 'imgs/Security-cuate 2.png'%}"
+        alt="a photo for a login"
+      />
+      <h1>Ta-da! Password updated, mission accomplished!</h1>
+
+      <a href="{% url 'login_page' %}"
+        ><button type="button" id="done-button">Log In</button>
+      </a>
+    </div>
+  </body>
+</html>
