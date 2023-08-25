@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Edit</title>
+    <link rel="stylesheet" href="{% static 'css/edit.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="right">
+        <form method="post">
+          {% csrf_token %}
+          <label>USEREMAIL</label>
+          <div class="text_field">
+            <input type="text" required name="username" />
+          </div>
+          <label>OLD USERNAME</label>
+          <div class="text_field">
+            <input type="password" required name="password" />
+          </div>
+
+          <label>NEW USERNAME</label>
+          <div class="text_field">
+            <input type="password" required name="password" />
+          </div>
+
+          <input type="submit" id="update-button" value="UPDATE" />
+        </form>
+      </div>
+
+      <div class="left">
+        <h1>Welcome Back!</h1>
+        <img
+          src="{% static 'imgs/Visual data-cuate 1.png' %}"
+          alt="a photo for a login"
+        />
+      </div>
+    </div>
+  </body>
+</html>

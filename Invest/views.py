@@ -102,5 +102,10 @@ def done(request):
     return render(request ,'Invest/done.html')
 
 
+def edit(request):
+    
+    return render (request , 'Invest/edit.html')
+
+
      
     

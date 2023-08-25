@@ -124,6 +124,9 @@ input[type="submit"] :hover {
   font-weight: 400;
   line-height: normal;
 }
+.child input {
+  background-color: #07377b;
+}
 .left h1 {
   text-align: center;
   color: #07377b;
@@ -137,8 +140,9 @@ input[type="submit"] :hover {
 }
 
 .signup_Link {
-  padding-left: 80px;
+  padding-left: 60px;
   padding-top: 10px;
+  display: inline-block;
 }
 .signup_Link a {
   text-decoration: none;
@@ -149,7 +153,10 @@ input[type="submit"] :hover {
   font-weight: 400;
   line-height: normal;
 }
-
+.signup_Link h4 {
+  display: inline-block;
+  color: #07377b;
+}
 .done-container {
   padding-left: 450px;
 }
@@ -177,4 +184,26 @@ input[type="submit"] :hover {
   border-color: #f27216;
   margin-left: 127px;
   flex-shrink: 0;
+}
+
+.input-icons i {
+  position: absolute;
+}
+
+.input-icons {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.icon {
+  padding-top: 35px;
+  padding-left: 319px;
+  color: #e49d5b;
+  min-width: 50px;
+  text-align: center;
+}
+.input-field {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
 }

@@ -24,9 +24,9 @@ body {
 
 .left input {
   display: flex;
-  width: 90%;
+
   margin: 10px;
-  margin-top: 50px;
+  margin-top: 45px;
   padding: 20px;
 
   justify-content: center;
@@ -37,8 +37,10 @@ body {
 
 .left hr {
   margin-top: 60px;
-  height: 1px;
+  height: 2px;
   width: 70%;
+  background-color: #2691d9;
+  border: none;
 }
 
 .left h2 {
@@ -82,14 +84,13 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 10px;
-  width: 329px;
-  height: 360px;
+  width: 30%;
+  height: 50%;
 }
 
 .right h2 {
-  width: 224px;
-  height: 55px;
+  width: 15%;
+  height: 8%;
   flex-shrink: 0;
   display: inline-block;
   color: #07377b;
@@ -103,7 +104,7 @@ body {
   text-align: center;
   border-radius: 10px;
   border: 1px solid #f60;
-  margin-left: 250px;
+  margin-left: 20%;
 }
 .right label {
   color: #07377b;
@@ -119,7 +120,7 @@ body {
 }
 
 .text_field input {
-  width: 373px;
+  width: 90%;
   height: 48px;
   flex-shrink: 0;
   border-radius: 10px;
@@ -145,7 +146,7 @@ body {
   margin-bottom: 7px;
 }
 input[type="submit"] {
-  width: 373px;
+  width: 273px;
   height: 48px;
   flex-shrink: 0;
   border-radius: 10px;
@@ -157,43 +158,6 @@ input[type="submit"] :hover {
   transition: 0.5s;
 }
 
-.child {
-  display: inline-block;
-  padding: 1rem 1rem;
-  vertical-align: middle;
-}
-.child a {
-  text-decoration: none;
-  color: #07377b;
-  font-family: Open Sans;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-.child label {
-  color: #07377b;
-  font-family: Open Sans;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.signup_Link {
-  padding-left: 80px;
-  padding-top: 10px;
-}
-.signup_Link a {
-  text-decoration: none;
-  color: #07377b;
-  font-family: Open Sans;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
 .done-container {
   padding-left: 650px;
 }
@@ -201,6 +165,7 @@ input[type="submit"] :hover {
   padding-top: 200px;
   margin-left: 50px;
 }
+
 .done-container h1 {
   color: #07377b;
   font-family: Open Sans;
@@ -211,16 +176,67 @@ input[type="submit"] :hover {
 }
 
 #chat-button {
-  width: 700px;
-  height: 71px;
-
+  width: 63%;
+  height: 10%;
+  position: absolute;
   justify-content: center;
   align-items: center;
-  gap: 4px;
   background: #f27216;
   border-radius: 10px;
   border-color: #f27216;
-  margin-top: 50px;
-  margin-left: 255px;
+  margin-top: 5%;
+  margin-left: 20%;
   flex-shrink: 0;
+}
+
+#chat-arrow {
+  width: 7%;
+  height: 7%;
+  position: absolute;
+  bottom: 10%;
+  left: 75%;
+}
+
+.logout button {
+  width: 30%;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+
+  gap: 4px;
+  background: #f4f2f0;
+  border-radius: 12px;
+  border: #eaecf0;
+  margin-top: 90%;
+  margin-left: 55%;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.logout {
+  color: #07377b;
+  left: 30%;
+}
+
+.logout img {
+  position: relative;
+  margin-top: 95%;
+  left: 65%;
+}
+
+.input-icons i {
+  position: absolute;
+}
+
+.input-icons {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.icon {
+  padding-top: 17px;
+  padding-left: 77%;
+  color: #e49d5b;
+  min-width: 50px;
+  text-align: center;
 }

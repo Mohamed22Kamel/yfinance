@@ -12,11 +12,11 @@
         <form method="post">
           <h1>Log In</h1>
           {% csrf_token %}
-          <label>username</label>
+          <label>USEREMAIL</label>
           <div class="text_field">
             <input type="text" required name="username" />
           </div>
-          <label>password</label>
+          <label>PASSWORD</label>
           <div class="text_field">
             <input type="password" required name="password" />
           </div>
@@ -33,7 +33,7 @@
             </div>
 
             <div class="child">
-              <a href="{% url 'reset' %}">Forget your password?</a>
+              <a href="{% url 'reset' %}">Forgot your password?</a>
             </div>
           </div>
 
@@ -42,7 +42,7 @@
           </div>
 
           <div class="signup_Link">
-            Don't have an account?
+            <h4>Don't have an account?</h4>
             <a href="{% url 'join' %}">SignUp</a>
           </div>
         </form>

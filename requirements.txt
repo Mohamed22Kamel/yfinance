@@ -21,7 +21,7 @@ lxml==4.8.0
 mock==4.0.3
 MySQL-python==1.2.5
 numpy==1.21.5
-ordereddict==1.1
+ordereddict==1.1git 
 Pillow==9.0.1
 Pillow==10.0.0
 protobuf==3.19.1

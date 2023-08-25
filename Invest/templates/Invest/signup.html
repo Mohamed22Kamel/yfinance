@@ -5,6 +5,9 @@
     <meta charset="utf-8" />
     <title>signup</title>
     <link rel="stylesheet"  href="{% static 'css/Login.css' %}" />
+     <link rel="stylesheet"
+          href=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <div class="container">
@@ -15,26 +18,30 @@
           {% csrf_token %}
           <h1>SignUp</h1>
 
-          <label>username</label>
+          <label>USERNAME</label>
           <div class="text_field">
        
             <input type="text" required name="username" />
           </div>
           
 
-          <label>User Email</label>
-          <div class="text_field">
+          <label>USEREMAIL</label>
+          
+             <div class="input-icons">
+                <i class="fa fa-envelope icon">
+                </i>
+                <div class="text_field">
             <input type="text" required name="email"/>
           </div>
           
-
+            </div>
           
-          <label>password</label>
+          <label>PASSWORD</label>
           <div class="text_field">
             <input type="password" required  name="password1"/>
           </div>
 
-          <label>confirm password</label>
+          <label>CONFIRM PASSWROD</label>
           <div class="text_field">
             <input type="password" required  name="password2"/>
           </div>
@@ -60,12 +67,12 @@
 
           
           
-            <input type="submit" value="Log In" />
+            <input type="submit" value="Sign up" />
           </div>
            
      
           <div class="signup_Link">
-            Already have an account?
+          <h4> Already have an account?</h4>
             <a href ="{% url 'login_page' %}">Login</a>
           </div>
         </form>

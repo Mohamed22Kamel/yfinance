@@ -5,6 +5,10 @@
     <meta charset="utf-8" />
     <title>Home</title>
     <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
     <div class="container">
@@ -18,12 +22,22 @@
         <h2>suggestion 2</h2>
         <h2>suggestion 3</h2>
         <h2>suggestion 4</h2>
+        <div class = "chat">
+          <button type="button" id="chat-button">Start Chat</button>
+        <img src="{% static 'imgs/Arrow.png' %}" id="chat-arrow" alt="arrow " >
 
-        <button type="button" id="chat-button">Start Chat</button>
+        </div>
+        
       </div>
 
       <div class="left">
-        <input type="text" placeholder="Search.." />
+        <div class="input-icons">
+          <i class="fa fa-search icon"> </i>
+          <div class="text_field" placeholder="search">
+            <input type="text" required name="email" />
+          </div>
+        </div>
+
         <hr />
 
         <h2>Yestrday</h2>
@@ -33,6 +47,19 @@
         <h2>Prvious Week</h2>
         <h3>Company 1</h3>
         <h3>Company 2</h3>
+
+        
+         
+          <div class="logout">
+            <img src="{% static 'imgs/logout 1.png' %}" alt="logout photo">
+            <button type="button">Log out </button>
+            
+           
+
+            
+            
+          </div>
+        </div>
       </div>
     </div>
   </body>
