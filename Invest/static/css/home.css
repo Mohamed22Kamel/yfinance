@@ -197,30 +197,50 @@ input[type="submit"] :hover {
   left: 75%;
 }
 
+.logout {
+  color: #07377b;
+}
 .logout button {
   width: 30%;
   height: 60px;
   justify-content: center;
   align-items: center;
-
   gap: 4px;
   background: #f4f2f0;
   border-radius: 12px;
   border: #eaecf0;
-  margin-top: 90%;
   margin-left: 55%;
   flex-shrink: 0;
   text-align: right;
 }
 
-.logout {
-  color: #07377b;
-  left: 30%;
-}
-
 .logout img {
   position: relative;
-  margin-top: 95%;
+  margin-top: 70%;
+  left: 65%;
+}
+
+.edit {
+  color: #07377b;
+}
+.edit button {
+  width: 30%;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 55%;
+  gap: 4px;
+  background: #f4f2f0;
+  border-radius: 12px;
+  border: #eaecf0;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.edit img {
+  position: relative;
+  margin-top: 10%;
+
   left: 65%;
 }
 

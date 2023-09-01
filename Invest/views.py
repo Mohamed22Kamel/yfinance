@@ -106,6 +106,19 @@ def edit(request):
     
     return render (request , 'Invest/edit.html')
 
+def delete(request):
+    
+    return render (request , 'Invest/delete.html')
+
+
+def learn(request):
+    return render (request ,'Invest/learnmore.html')
+
+def chat(request):
+    return render (request ,'Invest/chat.html')
+
+
+     
 
      
     

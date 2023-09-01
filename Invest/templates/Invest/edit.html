@@ -27,14 +27,30 @@
 
           <input type="submit" id="update-button" value="UPDATE" />
         </form>
+
+        <a href="{% url 'homePage' %}"><button type="button">Back</button> </a>
       </div>
 
       <div class="left">
-        <h1>Welcome Back!</h1>
-        <img
-          src="{% static 'imgs/Visual data-cuate 1.png' %}"
-          alt="a photo for a login"
-        />
+        <form method="post">
+          {% csrf_token %}
+
+          <button type="submit" id="upload-button">
+            <img
+              src="{%static 'imgs/upload-profile.png'%}"
+              alt="upload profile picture photo"
+              id="upload-profile"
+            />
+          </button>
+        </form>
+
+        <div class="Delete">
+          <img src="{% static 'imgs/profile-icon.png' %}" alt="profile icon " />
+
+          <a href="{% url 'delete' %}">
+            <button type="button">Delete Account</button>
+          </a>
+        </div>
       </div>
     </div>
   </body>

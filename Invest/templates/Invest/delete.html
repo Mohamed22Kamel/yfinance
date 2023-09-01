@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete</title>
+    <link rel="stylesheet" href="{% static 'css/edit.css' %}" />
+  </head>
+  <body class="delete-page">
+    <div class="confirm-delete">
+      <form method="post">
+        {% csrf_token %}
+
+        <label>PASSWORD</label>
+        <div class="text_field">
+          <input type="password" required name="password1" />
+        </div>
+        <label>CONFIRM PASSWORD</label>
+        <div class="text_field">
+          <input type="password" required name="password2" />
+        </div>
+
+        <input type="submit" value="DELETE" />
+      </form>
+    </div>
+  </body>
+</html>

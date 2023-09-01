@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>chat</title>
+    <link rel="stylesheet" href="{% static 'css/chat.css' %}" />
+  </head>
+  <body>
+    <div class="chat">
+      <form method="post">
+        {% csrf_token %}
+        <label> Invest</label>
+        <hr />
+        <div class="chat-input">
+          <hr />
+          <div class="text_field">
+            <input type="text" required name="message" id="chat-value" />
+            <button id="send-m" type="button">
+              <img src="{% static 'imgs/send.png'%}" alt="send-icon" />
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script src="{% static 'js/app.js' %}"></script>
+  </body>
+</html>

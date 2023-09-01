@@ -32,9 +32,9 @@ body {
 }
 
 .right form {
-  margin-top: 20%;
+  margin-top: 12%;
   margin-left: 10%;
-  padding: 10% 1.5% 10% 3.5%;
+  padding: 10% 1.5% 5% 3.5%;
   background-color: white;
   width: 70%;
   height: 50%;
@@ -43,12 +43,89 @@ body {
   box-shadow: 0px 3px 45px 0px rgba(241, 226, 255, 0.25);
 }
 
+.delete-page {
+  background-color: #adddff;
+}
+.confirm-delete form {
+  margin-top: 10%;
+  margin-left: 35%;
+  padding: 8% 1.5% 5% 3.5%;
+  background-color: white;
+  width: 30%;
+  height: 50%;
+  border-radius: 30px;
+  flex-shrink: 0;
+  box-shadow: 0px 3px 45px 0px rgba(241, 226, 255, 0.25);
+}
+.confirm-delete button {
+  width: 25%;
+  height: 67px;
+  margin-top: 10%;
+  margin-left: 35%;
+  text-decoration: none;
+  text-align: center;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border-color: #f27216;
+  background: var(--color-primary-orange, #ff7900);
+  color: #fff;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 100% */
+}
+.confirm-delete label {
+  margin-bottom: 10%;
+  margin-top: 5%;
+  color: #07377b;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.confirm-delete input[type="submit"] {
+  width: 90%;
+  height: 67px;
+  margin-top: 10%;
+  text-decoration: none;
+  text-align: center;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border-color: #f27216;
+  background: var(--color-primary-orange, #ff7900);
+  color: #fff;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 100% */
+}
+
+.right button {
+  width: 25%;
+  height: 67px;
+  margin-top: 10%;
+  margin-left: 35%;
+  text-decoration: none;
+  text-align: center;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border-color: #f27216;
+  background: var(--color-primary-orange, #ff7900);
+  color: #fff;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 100% */
+}
 .text_field input {
   width: 90%;
   height: 50px;
-
   margin-bottom: 6%;
-
   flex-shrink: 0;
   border-radius: 5px;
   border: 1px solid var(--color-neutrals-light-grey-300, #d0d5dd);
@@ -75,4 +152,44 @@ input[type="submit"] :hover {
   transition: 0.5s;
   text-decoration: #07377b;
   text-decoration-color: #07377b;
+}
+
+.Delete button {
+  width: 30%;
+  height: 67px;
+  margin-top: 7%;
+  margin-left: 25%;
+  text-decoration: none;
+  text-align: right;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border-color: #f27216;
+  background: var(--color-primary-orange, #ff7900);
+  color: #fff;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 100% */
+}
+
+.Delete img {
+  left: 32%;
+  size: 80%;
+  bottom: 5%;
+  position: relative;
+}
+
+#upload-profile {
+  width: 80%;
+  margin-left: 35%;
+  margin-top: 25%;
+  border-radius: 400px;
+}
+#upload-button {
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  background-color: inherit;
+  border-radius: 100px;
 }

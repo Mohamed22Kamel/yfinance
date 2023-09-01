@@ -6,7 +6,6 @@
     <title>welcome</title>
     <link rel="stylesheet" href="{% static 'css/welcome.css' %}" />
   </head>
-
   <body>
     <div class="container">
       <div class="left">
@@ -19,7 +18,9 @@
             <button type="button" id="Join">Join us</button>
           </a>
 
-          <button type="button" id="learn">Learn more</button>
+          <a href="{% url 'learn'  %}">
+            <button type="button" id="learn">Learn more</button>
+          </a>
         </div>
       </div>
 
