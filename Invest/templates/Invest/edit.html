@@ -5,6 +5,10 @@
     <meta charset="utf-8" />
     <title>Edit</title>
     <link rel="stylesheet" href="{% static 'css/edit.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
     <div class="container">
@@ -34,14 +38,13 @@
       <div class="left">
         <form method="post">
           {% csrf_token %}
-
-          <button type="submit" id="upload-button">
-            <img
-              src="{%static 'imgs/upload-profile.png'%}"
-              alt="upload profile picture photo"
-              id="upload-profile"
-            />
-          </button>
+          <div class="upload">
+            <img src="{% static 'imgs/upload-profile.png' %}" alt="" id="res" />
+            <div class="round">
+              <input type="file" id="image_input" accept="image/png" />
+              <i class="fa fa-camera" style="color: #fff"></i>
+            </div>
+          </div>
         </form>
 
         <div class="Delete">
@@ -53,5 +56,6 @@
         </div>
       </div>
     </div>
+    <script src="{% static 'js/image.js' %}"></script>
   </body>
 </html>

@@ -11,10 +11,21 @@
     <div class="chat">
       <form method="post">
         {% csrf_token %}
-        <label> Invest</label>
+
+        <div class="chat-header">
+          <img src="{% static 'imgs/stock.png'%}" alt="stock market photo" />
+          <label> InvestChatPros</label>
+        </div>
+
         <hr />
+
+        <div id="chat-answer">
+          <p>welcome to invest chat pro how can i help you ?</p>
+        </div>
+
         <div class="chat-input">
           <hr />
+
           <div class="text_field">
             <input type="text" required name="message" id="chat-value" />
             <button id="send-m" type="button">

@@ -42,6 +42,15 @@ body {
   flex-shrink: 0;
   box-shadow: 0px 3px 45px 0px rgba(241, 226, 255, 0.25);
 }
+.right label {
+  color: #07377b;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 5%;
+}
 
 .delete-page {
   background-color: #adddff;
@@ -180,16 +189,49 @@ input[type="submit"] :hover {
   position: relative;
 }
 
-#upload-profile {
-  width: 80%;
+.upload-profile-picture {
+  display: flex;
+}
+
+.upload-profile-picture img {
+  width: 35%;
   margin-left: 35%;
   margin-top: 25%;
   border-radius: 400px;
 }
-#upload-button {
-  border: none;
+
+.upload {
+  display: flex;
+  width: 60%;
+  margin: auto;
+  margin-top: 10%;
+}
+
+.upload img {
+  width: 100%;
+  border-radius: 50%;
+  border: 6px solid #eaeaea;
+}
+
+.upload .round {
+  position: absolute;
+  margin-left: 44%;
+  margin-top: 60%;
+  background: #00b4ff;
+  width: 32px;
+  height: 32px;
+  line-height: 33px;
+  text-align: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.upload .round input[type="file"] {
+  position: absolute;
+  transform: scale(2);
+  opacity: 0;
+}
+
+input[type="file"]::-webkit-file-upload-button {
   cursor: pointer;
-  appearance: none;
-  background-color: inherit;
-  border-radius: 100px;
 }
