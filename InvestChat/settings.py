@@ -32,13 +32,14 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
    
-    "Invest.apps.InvestConfig",
+   
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "Invest.apps.InvestConfig",
 ]
 
 MIDDLEWARE = [
@@ -115,6 +116,8 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR ,'Invest/static')
 ]
+MEDIA_ROOT = os.path.join(BASE_DIR ,'uploads')
+MEDIA_URL = '/uploads/'
 
 
 # Default primary key field type

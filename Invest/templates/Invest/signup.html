@@ -14,28 +14,20 @@
       <div class="right">
         
         <form method="post">
-
           {% csrf_token %}
           <h1>SignUp</h1>
-
           <label>USERNAME</label>
           <div class="text_field">
-       
             <input type="text" required name="username" />
           </div>
-          
-
           <label>USEREMAIL</label>
-          
-             <div class="input-icons">
+           <div class="input-icons">
                 <i class="fa fa-envelope icon">
                 </i>
                 <div class="text_field">
             <input type="text" required name="email"/>
           </div>
-          
             </div>
-          
           <label>PASSWORD</label>
           <div class="text_field">
             <input type="password" required  name="password1"/>

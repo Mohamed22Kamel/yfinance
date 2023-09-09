@@ -1,14 +1,17 @@
 from django.shortcuts import render , redirect
 from django.http import HttpResponse
+from django.contrib.auth import authenticate ,login , logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django import forms
 from django.forms import ModelForm, ValidationError
-from .forms import UserRegisterForm , LoginForm
 from django.contrib.auth import  authenticate , get_user_model
+from .forms import UserRegisterForm , LoginForm ,ProfilePicForm
+from .models import Profile
 
 def home(request):
+    print(request.user.username)
     return render(request , 'Invest/welcomepage.html' )
 
 def join(request):
@@ -28,18 +31,20 @@ def join(request):
            
             messages.error(request,"password doesn't match")
             return render(request , 'Invest/signup.html' , {'form' : form })
-         #       raise forms.ValidationError("Passwords must match!") 
+         #   raise forms.ValidationError("Passwords must match!") 
 
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            confirmpassword = form.cleaned_data.get('password2')
+            #email = form.changed_data.get('email')
             messages.success(request, f'account created {username}')
-            return render(request , 'Invest/home.html' , {'form' : form }) 
+            return redirect('dashboard')
 
         else : 
             messages.error(request,form.errors)
-            
-            #username = form.cleaned_data.get('username')
+    
             
     
             print('*' * 30 )
@@ -50,34 +55,29 @@ def join(request):
     return render(request , 'Invest/signup.html' , {'form' : form })
 
     
-def homePage(request):
-    return render(request , 'Invest/home.html' )
+
 
 def login_page(request):
-
-    if request.method == 'GET':
-        form = LoginForm()
-        return render(request,'Invest/login.html', {'form': form})
     
-    elif request.method == 'POST':
-        form = LoginForm(request.POST)
+    if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
+        user = authenticate(request , username=username , password =password)
       
-        if form.is_valid():
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-         
-            user = authenticate(request,username=username,password=password)
-            print(user)
-            if user:
-               
-                messages.success(request,f'Hi {username.title()}, welcome back!')
-                return render(request , 'Invest/home.html' )
+        if user is not None :
+           login(request ,user)
+           messages.success(request,f'Hi {username.title()}, welcome back!')
+           return redirect('dashboard' )
+        else:
+            return redirect('login_page')
         
         # form is not valid or user is not authenticated
+        
+        #return render(request,'Invest/login.html',{'form': form})
+    else :
         messages.error(request,f'Invalid username or password')
-        return render(request,'Invest/login.html',{'form': form})
+        return render(request ,'Invest/login.html')
+
 
 
 def reset_page(request):
@@ -88,22 +88,32 @@ def reset_page(request):
         if get_user_model().objects.filter(username=username):
             if password == confirmpassword : 
                 user = User.objects.get(
-               
                 username=username,  
-            
                 )      
                 user.set_password(password)
                 user.save()
                 return render(request , 'Invest/done.html')
     return render(request , 'Invest/reset.html')
 
-def done(request):
-    
+def done(request):    
     return render(request ,'Invest/done.html')
 
-
 def edit(request):
-    
+    if request.method == 'POST':
+        user = User.objects.get(id=request.user.id)
+        profile = Profile.objects.get(user_id =request.user.id)
+        user_form = UserRegisterForm(request.POST or None , request.FILES or None,instance = user) 
+        profile_form = ProfilePicForm(request.POST or None ,request.FILES or None ,instance = profile)
+       
+        print(profile_form.is_valid())
+        print(profile_form.errors)
+        if profile_form.is_valid():
+            print("halllloooooooo ")
+            #user_form.save()
+            profile_form.save()
+            #login(request ,user_form)
+            return redirect('dashboard')
+             
     return render (request , 'Invest/edit.html')
 
 def delete(request):
@@ -118,7 +128,13 @@ def chat(request):
     return render (request ,'Invest/chat.html')
 
 
-     
+def homePage(request):
+    if request.user.is_authenticated:
+        profile = Profile.objects.get(user_id=request.user.id)
+        profile= profile.user
+        return render (request , "Invest/home.html" , {"profile":profile} )
+    else :
+        return render (request ,'Invest/chat.html') 
 
      
     
