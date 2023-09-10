@@ -16,25 +16,28 @@
 
          {% block content%}
 
-        {% if profile%}
-        <h2>{{profile.username}}</h2>
-
+        {% if profile.profile_image%}
+          <img  src="{{profile.profile_image.url}}" alt="profile-icon"  id = "profile-picture">
+      
         {%  endif %}
         {%  endblock   %}
         <img
           src="{% static 'imgs/favpng_electrical-network-electronic-circuit-printed-circuit-board-electrical-engineering-removebg-preview 2.png' %}"
           alt=" electrical network"
         />
-       
+        <div id="suggestion">
+
+        <h2>suggestion 1</h2>
         <h2>suggestion 2</h2>
         <h2>suggestion 3</h2>
         <h2>suggestion 4</h2>
+
+        </div>
+       
         <div class = "chat">
           <button type="button" id="chat-button">Start Chat</button>
         <img src="{% static 'imgs/Arrow.png' %}" id="chat-arrow" alt="arrow " >
-
-        </div>
-        
+        </div>        
       </div>
 
       <div class="left">
@@ -52,14 +55,19 @@
         <h3>Company 2</h3>
 
         <h2>Prvious Week</h2>
+
         <h3>Company 1</h3>
         <h3>Company 2</h3>
 
         
          
           <div class="logout">
-            <img src="{% static 'imgs/logout 1.png' %}" alt="logout photo">
+            <a href="{% url 'logout' %}">
+
+ <img src="{% static 'imgs/logout 1.png' %}" alt="logout photo">
             <button type="button">Log out </button>
+            </a>
+           
           </div>
           
             <div class="edit">

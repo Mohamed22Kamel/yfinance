@@ -81,16 +81,15 @@ body {
 }
 
 .right img {
-  display: block;
-  margin-left: auto;
+  display: inline-block;
+  margin-left: 30%;
   margin-right: auto;
-  width: 30%;
-  height: 50%;
+  width: 25%;
+  height: 40%;
 }
-
 .right h2 {
-  width: 15%;
-  height: 8%;
+  width: 17%;
+  height: 16%;
   flex-shrink: 0;
   display: inline-block;
   color: #07377b;
@@ -106,6 +105,7 @@ body {
   border: 1px solid #f60;
   margin-left: 20%;
 }
+
 .right label {
   color: #07377b;
   font-family: Open Sans;
@@ -184,7 +184,7 @@ input[type="submit"] :hover {
   background: #f27216;
   border-radius: 10px;
   border-color: #f27216;
-  margin-top: 5%;
+  margin-top: 10%;
   margin-left: 20%;
   flex-shrink: 0;
 }
@@ -193,8 +193,8 @@ input[type="submit"] :hover {
   width: 7%;
   height: 7%;
   position: absolute;
-  bottom: 10%;
-  left: 75%;
+  bottom: 23%;
+  left: 45%;
 }
 
 .logout {
@@ -259,4 +259,14 @@ input[type="submit"] :hover {
   color: #e49d5b;
   min-width: 50px;
   text-align: center;
+}
+
+#profile-picture {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  margin-left: 89%;
+  margin-top: 2%;
+  border-radius: 40px;
+  border: solid 2px whitesmoke;
 }

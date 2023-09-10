@@ -81,11 +81,11 @@ body {
 }
 
 .right img {
-  display: block;
-  margin-left: auto;
+  display: inline-block;
+  margin-left: 30%;
   margin-right: auto;
-  width: 30%;
-  height: 50%;
+  width: 25%;
+  height: 40%;
 }
 
 .right h2 {
@@ -259,4 +259,13 @@ input[type="submit"] :hover {
   color: #e49d5b;
   min-width: 50px;
   text-align: center;
+}
+
+#profile-picture {
+  position: absolute;
+  width: 7%;
+  height: 10%;
+  margin-left: 85%;
+  border-radius: 50px;
+  border: solid 1px;
 }

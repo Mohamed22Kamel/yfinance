@@ -108,7 +108,6 @@ def edit(request):
         print(profile_form.is_valid())
         print(profile_form.errors)
         if profile_form.is_valid():
-            print("halllloooooooo ")
             #user_form.save()
             profile_form.save()
             #login(request ,user_form)
@@ -131,10 +130,17 @@ def chat(request):
 def homePage(request):
     if request.user.is_authenticated:
         profile = Profile.objects.get(user_id=request.user.id)
-        profile= profile.user
+
+        print(profile.profile_image)
+        
         return render (request , "Invest/home.html" , {"profile":profile} )
     else :
         return render (request ,'Invest/chat.html') 
+    
+
+def logout_user(request):
+    logout(request)
+    return redirect('join')
 
      
     

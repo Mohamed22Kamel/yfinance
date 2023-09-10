@@ -12,6 +12,7 @@ urlpatterns = [
     path('edit' , views.edit , name='edit'),
     path('delete' , views.delete , name='delete'),
     path('learn', views.learn , name='learn' ),
-    path('chat', views.chat , name='chat' )
+    path('chat', views.chat , name='chat' ),
+    path('logout' , views.logout_user , name= 'logout'),
 
 ]+static(settings.MEDIA_URL , document_root = settings.MEDIA_ROOT)
