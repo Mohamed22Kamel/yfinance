@@ -194,7 +194,7 @@ input[type="submit"] :hover {
 }
 
 .upload-profile-picture img {
-  width: 35%;
+  width: 45%;
   margin-left: 35%;
   margin-top: 25%;
   border-radius: 400px;
@@ -202,7 +202,7 @@ input[type="submit"] :hover {
 
 .upload {
   display: flex;
-  width: 60%;
+  width: 90%;
   margin: auto;
   margin-top: 10%;
 }
@@ -234,4 +234,23 @@ input[type="submit"] :hover {
 
 input[type="file"]::-webkit-file-upload-button {
   cursor: pointer;
+}
+
+#upload-image-button {
+  width: 25%;
+  height: 67px;
+  margin-top: 50%;
+  margin-left: 5%;
+  text-decoration: none;
+  text-align: center;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border-color: #f27216;
+  background: var(--color-primary-orange, #ff7900);
+  color: #fff;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 100% */
 }

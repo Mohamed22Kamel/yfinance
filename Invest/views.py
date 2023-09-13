@@ -67,7 +67,7 @@ def login_page(request):
         if user is not None :
            login(request ,user)
            messages.success(request,f'Hi {username.title()}, welcome back!')
-           return redirect('dashboard' )
+           return redirect('dashboard')
         else:
             return redirect('login_page')
         
@@ -135,7 +135,7 @@ def homePage(request):
         
         return render (request , "Invest/home.html" , {"profile":profile} )
     else :
-        return render (request ,'Invest/chat.html') 
+        return render (request ,'Invest/login.html') 
     
 
 def logout_user(request):
