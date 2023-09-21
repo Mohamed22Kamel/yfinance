@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="chat">
-      <form method="post">
+      <form method="post" id="form1">
         {% csrf_token %}
 
         <div class="chat-header">
@@ -18,24 +18,28 @@
         </div>
 
         <hr />
-
         <div id="chat-answer">
           <p>welcome to invest chat pro how can i help you ?</p>
         </div>
+
+        {% block content%} {% if message%}
+        <p>{{message}}</p>
+        {% endif %} {% if response%}
+        <p>{{response}}</p>
+        {% endif %} {% endblock %}
 
         <div class="chat-input">
           <hr />
 
           <div class="text_field">
             <input type="text" required name="message" id="chat-value" />
-            <button id="send-m" type="button">
+
+            <button type="submit" id="send-m">
               <img src="{% static 'imgs/send.png'%}" alt="send-icon" />
             </button>
           </div>
         </div>
       </form>
     </div>
-
-    <script src="{% static 'js/app.js' %}"></script>
   </body>
 </html>

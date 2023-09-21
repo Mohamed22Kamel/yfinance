@@ -1,0 +1,70 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+
+    {
+      "tag": "stock",
+      "patterns": [
+        "Can you tell me about the most profitable stocks ?",
+        "Can you tell me which stocks are now making the most money?",
+        "which stocks are now the most profitable, please?"
+      ],
+      "responses": ["Sure, here are some of the most profitable stocks "]
+    },
+    {
+      "tag": "predictions",
+      "patterns": [
+        "can you make technical analysis for ?",
+        "are you able to do technical analysis for ? ",
+        "Is it possible to analyze the stock's performance in the coming period?",
+        "can you predict the price for ? ",
+        "can you forecast the price for ? ",
+        ""
+      ],
+      "responses": [
+        "Sure, I can help you with that. Here is a technical analysis for  "
+      ]
+    },
+    {
+      "tag": "Technical analysis ",
+      "patterns": [
+        "what is technical analysis ?",
+        "Technical analysis: What is it?",
+        "can you define technical analysis ?"
+      ],
+      "responses": [
+        "Technical analysis is a school of market behavior analysis that mostly uses price charts and its purpose is to project future price movements. The proponents of technical analysis use data on price volume and the number of open positions in the case of futures markets.Technical analysis is based on 3 assumptions: 1-the market discounts everything2-prices follow trends3-history likes to repeat itself."
+      ]
+    }
+  ]
+}

@@ -4,5 +4,4 @@ var uploaded_image = "";
 image_input.addEventListener("change", function () {
   //document.getElementById("res").src = image_input.value;
   //document.getElementById("res").src = image_input.value;
-  alert(image_input.value);
 });

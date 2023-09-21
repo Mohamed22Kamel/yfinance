@@ -15,7 +15,6 @@ class ProfilePicForm(forms.ModelForm):
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
-    #user_image = forms.ImageField()
     class Meta():
         model = User 
         fields = ['username','email','password1' ,'password2']

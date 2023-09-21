@@ -16,7 +16,7 @@ body {
   color: darkcyan;
 }
 .chat-input {
-  margin-top: 70%;
+  margin-top: 30px;
   width: 100%;
 }
 .text_field {
