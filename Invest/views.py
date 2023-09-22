@@ -11,7 +11,6 @@ from .forms import UserRegisterForm , LoginForm ,ProfilePicForm
 from .models import Profile
 from .chat import bot_answer
 def home(request):
-    print(request.user.username)
     return render(request , 'Invest/welcomepage.html' )
 
 def join(request):
@@ -56,7 +55,6 @@ def login_page(request):
       
         if user is not None :
            login(request ,user)
-           messages.success(request,f'Hi {username.title()}, welcome back!')
            return redirect('dashboard')
         else:
             return redirect('login_page')
@@ -89,13 +87,9 @@ def edit(request):
         profile = Profile.objects.get(user_id =request.user.id)
         user_form = UserRegisterForm(request.POST or None , request.FILES or None,instance = user) 
         profile_form = ProfilePicForm(request.POST or None ,request.FILES or None ,instance = profile)
-       
         if profile_form.is_valid():
-    
             profile_form.save()
-   
-            return redirect('dashboard')
-             
+            return redirect('dashboard')   
     return render (request , 'Invest/edit.html')
 
 def delete(request):
