@@ -190,11 +190,11 @@ input[type="submit"] :hover {
 }
 
 #chat-arrow {
-  width: 7%;
-  height: 7%;
+  width: 6%;
+  height: 6%;
   position: absolute;
-  bottom: 23%;
-  left: 45%;
+  margin-top: 11.5%;
+  margin-left: 75%;
 }
 
 .logout {
@@ -216,7 +216,7 @@ input[type="submit"] :hover {
 
 .logout img {
   position: relative;
-  margin-top: 70%;
+  margin-top: 50%;
   left: 65%;
 }
 

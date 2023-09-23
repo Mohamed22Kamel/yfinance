@@ -93,7 +93,7 @@ def edit(request):
     return render (request , 'Invest/edit.html')
 
 def delete(request):
-    if request.user.is_authenticated:
+    if request.method =="POST":
         user = User.objects.get(username=request.user)
         user.delete()
         return redirect('invest-home')
