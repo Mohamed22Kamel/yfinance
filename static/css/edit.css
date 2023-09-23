@@ -203,8 +203,9 @@ input[type="submit"] :hover {
 .upload {
   display: flex;
   width: 70%;
-  margin: auto;
-  margin-top: 10%;
+
+  margin-top: 6%;
+  margin-left: 2%;
 }
 
 .upload img {
@@ -215,8 +216,8 @@ input[type="submit"] :hover {
 
 .upload .round {
   position: absolute;
-  margin-left: 50%;
-  margin-top: 65%;
+  left: 50%;
+  top: 60%;
   background: #00b4ff;
   width: 32px;
   height: 32px;
@@ -238,7 +239,7 @@ input[type="file"]::-webkit-file-upload-button {
 
 #upload-image-button {
   width: 25%;
-  height: 67px;
+  height: 30%;
   margin-top: 50%;
   text-decoration: none;
   text-align: center;

@@ -25,8 +25,19 @@ body {
 .left img {
   display: block;
   margin: 0 auto;
-  max-width: 90%;
-  padding: 1px 0px 71px 58px;
+  max-width: 70%;
+  padding: 0px 0px 71px 58px;
+}
+
+.left h1 {
+  text-align: center;
+  color: #07377b;
+  font-family: Open Sans;
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-top: 6%;
 }
 .right {
   position: absolute;
@@ -36,6 +47,9 @@ body {
   height: 100vh;
 
   background-color: white;
+}
+.right form {
+  padding: 3.5% 5% 1% 13%;
 }
 
 .right h1 {
@@ -50,20 +64,17 @@ body {
 .right label {
   color: #07377b;
   font-family: Open Sans;
-  font-size: 16px;
+  font-size: 80%;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
 }
-.right form {
-  padding: 90px 50px 90px 110px;
-}
 
 .text_field input {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 373px;
-  height: 48px;
+  margin-top: 4%;
+  margin-bottom: 1%;
+  width: 60%;
+  height: 40px;
   flex-shrink: 0;
   border-radius: 10px;
   border: 1px solid var(--color-neutrals-light-grey-300, #d0d5dd);
@@ -79,7 +90,6 @@ body {
   display: block;
 }
 .pass label {
-  /*text-align: left;*/
   margin-top: 2px;
   margin-bottom: 7px;
 }
@@ -127,17 +137,6 @@ input[type="submit"] :hover {
 .child input {
   background-color: #07377b;
 }
-.left h1 {
-  text-align: center;
-  color: #07377b;
-  font-family: Open Sans;
-  font-size: 77px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-
-  padding-top: 110px;
-}
 
 .signup_Link {
   padding-left: 60px;
@@ -174,7 +173,7 @@ input[type="submit"] :hover {
 }
 
 #done-button {
-  width: 373px;
+  width: 40%;
   height: 48px;
   justify-content: center;
   align-items: center;
@@ -196,8 +195,8 @@ input[type="submit"] :hover {
 }
 
 .icon {
-  padding-top: 35px;
-  padding-left: 319px;
+  padding-top: 4.7%;
+  padding-left: 45%;
   color: #e49d5b;
   min-width: 50px;
   text-align: center;
