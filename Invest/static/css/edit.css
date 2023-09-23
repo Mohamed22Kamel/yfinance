@@ -217,7 +217,7 @@ input[type="submit"] :hover {
 .upload .round {
   position: absolute;
   left: 50%;
-  top: 65%;
+  top: 60%;
   background: #00b4ff;
   width: 32px;
   height: 32px;
