@@ -21,11 +21,6 @@ def join(request):
         password = request.POST.get('password1') 
         confirmpassword = request.POST.get('password2')
         email = request.POST.get('email')
-
-        if password != confirmpassword:
-           
-            messages.error(request,"password doesn't match")
-            return render(request , 'Invest/signup.html' , {'form' : form })
         
         if form.is_valid():
            
@@ -36,11 +31,13 @@ def join(request):
             return redirect('login_page')
 
         else : 
+            error = ' '
             messages.error(request,form.errors)
- 
+            error = form.errors.as_text()
+            return render(request , 'Invest/signup.html' , {'error' : error })
            
     else: 
-        form = UserCreationForm() 
+        form = UserRegisterForm()
         
     return render(request , 'Invest/signup.html' , {'form' : form })
 
