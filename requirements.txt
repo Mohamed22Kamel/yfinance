@@ -1,0 +1,10 @@
+django
+torch 
+numpy 
+Pillow 
+nltk 
+transformers 
+scikit-learn 
+yfinance 
+stockstats 
+selenium

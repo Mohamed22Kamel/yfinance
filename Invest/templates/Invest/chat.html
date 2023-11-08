@@ -24,7 +24,9 @@
 
         {% block content%} {% if message%}
         <p>{{message}}</p>
-        {% endif %} {% if response%}
+        {% endif %}
+        <p id="waiting"></p>
+        {% if response%}
         <p>{{response}}</p>
         {% endif %} {% endblock %}
 
@@ -43,3 +45,41 @@
     </div>
   </body>
 </html>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function () {
+    const chatMessages = $("#chat-messages");
+    const form = $("#form1");
+    const waiting = $("#waiting");
+    const sendButton = $("#send-m");
+    const chatValue = $("#chat-value");
+
+    form.on("submit", function (e) {
+      sendButton.prop("disabled", true);
+
+      {% comment %} e.preventDefault(); {% endcomment %}
+      waiting.val("Analyzing ...")
+      chatValue.onChange(function () {
+        sendButton.prop("disabled", false);
+      });
+    });
+
+    // Function to check for updates periodically (e.g., every 5 seconds)
+    function checkForUpdates() {
+      // Simulate checking for updates (replace with your logic to fetch updates)
+      const updates = ["New message 1", "New message 2"];
+
+      updates.forEach(function (update) {
+        // Add the update to the chat messages
+        chatMessages.append("<p>" + update + "</p>");
+      });
+
+      // Schedule the next check
+      setTimeout(checkForUpdates, 5000); // 5000 milliseconds (5 seconds)
+    }
+
+    // Start checking for updates
+    checkForUpdates();
+  });
+</script>

@@ -11,7 +11,12 @@ from .forms import UserRegisterForm , LoginForm ,ProfilePicForm
 from .models import Profile
 from .chat import bot_answer
 def home(request):
-    return render(request , 'Invest/welcomepage.html' )
+    if request.user.is_authenticated:
+        profile = Profile.objects.get(user_id=request.user.id)
+        return redirect ("dashboard" )
+    else :
+        return render(request , 'Invest/welcomepage.html' )
+
 
 def join(request):
 
@@ -112,12 +117,11 @@ def chat(request):
 
 
 def homePage(request):
-  
     if request.user.is_authenticated:
         profile = Profile.objects.get(user_id=request.user.id)
         return render (request , "Invest/home.html" , {"profile":profile} )
     else :
-        return render (request ,'Invest/login.html') 
+        return redirect ('join/login') 
     
 
 def logout_user(request):

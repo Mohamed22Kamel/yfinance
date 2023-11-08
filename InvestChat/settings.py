@@ -10,8 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+from extractor.stock_predictor_handler import check
+from selenium import webdriver
+import yfinance as yf
+from extractor.company_name_handler import modelInit
 from pathlib import Path
-import os 
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -31,8 +35,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-   
-   
+
+
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -93,9 +97,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator", },
+    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator", },
+    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator", },
 ]
 
 
@@ -104,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE  = "UTC"
+TIME_ZONE = "UTC"
 
 USE_I18N = True
 
@@ -113,13 +117,61 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR , 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = "static/"
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR ,'Invest/static')
+    os.path.join(BASE_DIR, 'Invest/static')
 ]
-MEDIA_ROOT = os.path.join(BASE_DIR ,'uploads')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 MEDIA_URL = '/uploads/'
+
+MODEL = modelInit()
+
+
+def current_price(instrument):
+    data = yf.Ticker(instrument).history(period="1m")
+    return data.iloc[-1]
+
+
+def stock_day_watch(instrument):
+    data = yf.Ticker(instrument).history(period="1d", interval="5m")
+    return data
+
+
+chrome_driver_path = "../chromedriver_win32/chromedriver.exe"
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--blink-settings=imagesEnabled=false")
+chrome_options.add_argument("--disable-javascript")
+chrome_options.add_argument("--disable-extensions")
+chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.add_argument("--disable-gpu")
+chrome_options.add_argument("--disable-software-rasterizer")
+chrome_options.add_argument("--disable-web-security")
+chrome_options.add_argument("--disable-iframe")
+chrome_options.add_argument("--disable-popup-blocking")
+chrome_options.add_argument("--disable-impl-side-painting")
+chrome_options.add_argument("--disable-accelerated-2d-canvas")
+chrome_options.add_argument("--disable-accelerated-jpeg-decoding")
+chrome_options.add_argument("--disable-accelerated-mjpeg-decode")
+chrome_options.add_argument("--disable-accelerated-video-decode")
+chrome_options.add_argument("--disable-accelerated-video-encode")
+chrome_options.add_argument("--disable-background-networking")
+chrome_options.add_argument("--disable-background-timer-throttling")
+chrome_options.add_argument("--disable-backgrounding-occluded-windows")
+chrome_options.add_argument("--disable-breakpad")
+chrome_options.add_argument("--disable-client-side-phishing-detection")
+chrome_options.add_argument(
+    "--disable-component-extensions-with-background-pages")
+chrome_options.add_argument("--disable-component-update")
+chrome_options.add_argument("--headless")  # Run in headless mode without a GUI
+# Disable GPU acceleration (needed in headless mode)
+chrome_options.add_argument("--disable-gpu")
+chrome_options.binary_location = chrome_driver_path
+
+driver = webdriver.Chrome(options=chrome_options)
+
+
+CHECK = check(driver)
 
 
 # Default primary key field type
